@@ -10,7 +10,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: "1",
       },
     },
     "gatsby-plugin-image",
