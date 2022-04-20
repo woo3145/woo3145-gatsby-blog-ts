@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -22,7 +23,6 @@ const config: GatsbyConfig = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -39,6 +39,16 @@ const config: GatsbyConfig = {
         path: "./src/pages/",
       },
     },
+    {
+      // 블로그 글이 위치할 posts 폴더를 읽어줍니다.
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: path.resolve("posts"),
+      },
+    },
+    // gatsby에서 읽은 파일들 중 md파일을 해석하여 MarkDownRemark 노드로 변환해준다.
+    "gatsby-transformer-remark",
   ],
 };
 
