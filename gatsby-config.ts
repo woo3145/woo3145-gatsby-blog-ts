@@ -1,11 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 import path from "path";
+import metaConfig from "./gatsby-meta-config";
 
 const config: GatsbyConfig = {
-  siteMetadata: {
-    title: `woo3145-gatsby-blog-ts`,
-    siteUrl: `https://www.yourdomain.tld`,
-  },
+  siteMetadata: metaConfig,
   plugins: [
     "gatsby-plugin-sass",
     {
@@ -28,8 +26,8 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: "assets",
+        path: "./assets",
       },
     },
     {
