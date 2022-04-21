@@ -1,19 +1,20 @@
 import * as React from "react";
 import { graphql, PageProps } from "gatsby";
+import Layout from "../layout";
 
-type DataProps = {
+interface DataProps {
   site: {
     siteMetadata: {
       title: string;
     };
   };
-};
+}
 
 const IndexRoute = ({ data: { site }, path }: PageProps<DataProps>) => {
   return (
-    <main>
+    <Layout>
       <h1>{site.siteMetadata.title}</h1>
-    </main>
+    </Layout>
   );
 };
 
