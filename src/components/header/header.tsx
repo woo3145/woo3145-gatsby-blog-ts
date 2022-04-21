@@ -1,7 +1,9 @@
 import React from "react";
+import { useSiteMetadata } from "../../hooks/useSiteMetadate";
 
 const Header = () => {
-  return <header>header</header>;
+  const { title } = useSiteMetadata();
+  return <header>{title}</header>;
 };
 
 export default Header;
