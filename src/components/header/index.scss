@@ -1,44 +1,65 @@
 @use "../../styles/mixins" as *;
+@use "../../styles//colors" as *;
 
 .header-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
   height: auto;
-  background-color: #deb6ab;
+  background-color: var(--primary-color);
   color: white;
+
   .header {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 20px;
     @include max-width;
 
+    padding: 20px 28px;
+    @include md {
+      padding: 24px 28px;
+      flex-direction: row;
+    }
+
     .header-menu {
+      flex: 1;
       display: flex;
+      justify-content: flex-end;
       a {
         font-size: 18px;
         font-weight: 600;
         margin-right: 20px;
       }
+      @include md {
+        justify-content: flex-start;
+      }
     }
     .header-title {
-      font-size: 24px;
+      flex: 1;
+      font-size: 18px;
       font-weight: 600;
+      @include md {
+        text-align: center;
+        font-size: 24px;
+      }
     }
     .header-info {
-      display: flex;
-      align-items: center;
-
+      flex: 1;
+      display: none;
+      @include md {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
       .header-info-sns {
-        .icon {
+        .header-info-sns-icon {
           color: white;
           margin-left: 8px;
-
           cursor: pointer;
           :hover {
             transition: all 0.2s;
-            color: #ac7d88;
+            color: var(--primary-color-accent);
           }
         }
       }

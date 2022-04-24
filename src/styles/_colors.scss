@@ -1,0 +1,11 @@
+// 라이트 모드
+html {
+  --background-color: #eeeeee;
+  --primary-color: #0f044c;
+  --primary-color-accent: #273066;
+}
+
+// 다크 모드
+html[data-theme="dark"] {
+  --background-color: #eeeeee;
+}

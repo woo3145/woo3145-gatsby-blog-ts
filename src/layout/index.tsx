@@ -9,9 +9,9 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div>
+    <div className="page-wrapper">
       <Header />
-      <main>{children}</main>
+      <main className="page-contents">{children}</main>
       <footer></footer>
     </div>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 import { useSiteMetadata } from "../../hooks/useSiteMetadate";
 import { IoLogoGithub, IoMailSharp } from "react-icons/io5";
+import { Link } from "gatsby";
 
 import "./index.scss";
-import { Link } from "gatsby";
 
 const Header = () => {
   const {
@@ -30,10 +30,14 @@ const Header = () => {
         </div>
         <div className="header-info">
           <div className="header-info-sns">
-            <a href={gitHub} className="icon" target="_blank">
+            <a href={gitHub} className="header-info-sns-icon" target="_blank">
               <IoLogoGithub size="20px" />
             </a>
-            <a href={`mailto:${email}`} className="icon" target="_blank">
+            <a
+              href={`mailto:${email}`}
+              className="header-info-sns-icon"
+              target="_blank"
+            >
               <IoMailSharp size="20px" />
             </a>
           </div>
