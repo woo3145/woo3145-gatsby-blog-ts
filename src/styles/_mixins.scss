@@ -1,4 +1,4 @@
-@use "./variables";
+@use "./variables" as *;
 
 @mixin md {
   @media (min-width: $min-screen-md) {
@@ -10,4 +10,9 @@
   @media (min-width: $min-screen-lg) {
     @content;
   }
+}
+
+@mixin max-width {
+  width: 100%;
+  max-width: $min-screen-lg;
 }

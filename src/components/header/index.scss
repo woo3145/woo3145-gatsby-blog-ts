@@ -1,0 +1,47 @@
+@use "../../styles/mixins" as *;
+
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: #deb6ab;
+  color: white;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 20px;
+    @include max-width;
+
+    .header-menu {
+      display: flex;
+      a {
+        font-size: 18px;
+        font-weight: 600;
+        margin-right: 20px;
+      }
+    }
+    .header-title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .header-info {
+      display: flex;
+      align-items: center;
+
+      .header-info-sns {
+        .icon {
+          color: white;
+          margin-left: 8px;
+
+          cursor: pointer;
+          :hover {
+            transition: all 0.2s;
+            color: #ac7d88;
+          }
+        }
+      }
+    }
+  }
+}

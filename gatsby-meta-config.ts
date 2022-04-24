@@ -1,5 +1,5 @@
 const metaConfig: Record<string, unknown> = {
-  title: `woo3145.com`,
+  title: `woo3145`,
   siteUrl: `https://woo3145.netlify.app`,
   autor: {
     name: "이창우",

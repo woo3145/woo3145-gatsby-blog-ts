@@ -19,7 +19,6 @@ interface DataProps {
     };
   };
 }
-
 export const useSiteMetadata = () => {
   const data = useStaticQuery<DataProps>(graphql`
     query SiteMetadata {
