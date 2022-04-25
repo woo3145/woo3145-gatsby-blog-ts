@@ -15,6 +15,11 @@ const Header = () => {
   return (
     <header className="header-wrapper">
       <div className="header">
+        <div className="header-title">
+          <Link to="/" className="link">
+            {title}
+          </Link>
+        </div>
         <div className="header-menu">
           <Link to="/about" className="link">
             about
@@ -22,26 +27,6 @@ const Header = () => {
           <Link to="/posts" className="link">
             posts
           </Link>
-        </div>
-        <div className="header-title">
-          <Link to="/" className="link">
-            {title}
-          </Link>
-        </div>
-        <div className="header-info">
-          <div className="header-info-sns">
-            <a href={gitHub} className="header-info-sns-icon" target="_blank">
-              <IoLogoGithub size="20px" />
-            </a>
-            <a
-              href={`mailto:${email}`}
-              className="header-info-sns-icon"
-              target="_blank"
-            >
-              <IoMailSharp size="20px" />
-            </a>
-          </div>
-          <span className="header-info-search"></span>
         </div>
       </div>
     </header>

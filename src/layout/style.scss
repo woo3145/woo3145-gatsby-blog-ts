@@ -32,6 +32,5 @@ body {
   min-height: 100vh;
   .page-contents {
     width: 100%;
-    @include max-width;
   }
 }
