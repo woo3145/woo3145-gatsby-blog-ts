@@ -11,6 +11,7 @@ interface DataProps {
         name: string;
         position: string;
         image: string;
+        comment: string;
         social: {
           gitHub: string;
           email: string;
@@ -30,6 +31,7 @@ export const useSiteMetadata = () => {
             name
             position
             image
+            comment
             social {
               gitHub
               email

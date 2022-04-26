@@ -1,0 +1,10 @@
+.icon {
+  font-size: 28px;
+  padding: 0 6px;
+  opacity: 50%;
+  transition: opacity ease 0.3s;
+  box-sizing: content-box;
+  &:hover {
+    opacity: 100%;
+  }
+}

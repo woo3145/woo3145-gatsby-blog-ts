@@ -1,17 +1,11 @@
 import React from "react";
 import { useSiteMetadata } from "../../hooks/useSiteMetadate";
-import { IoLogoGithub, IoMailSharp } from "react-icons/io5";
 import { Link } from "gatsby";
 
 import "./index.scss";
 
 const Header = () => {
-  const {
-    title,
-    autor: {
-      social: { gitHub, email },
-    },
-  } = useSiteMetadata();
+  const { title } = useSiteMetadata();
   return (
     <header className="header-wrapper">
       <div className="header">

@@ -4,7 +4,8 @@ const metaConfig: Record<string, unknown> = {
   autor: {
     name: "이창우",
     position: "프론트엔드 개발자",
-    image: "sample.png",
+    comment: "안녕하세요 블로그에 오신걸 환영합니다.",
+    image: "cat.png", // assets 폴더
     social: {
       gitHub: "https://github.com/woo3145",
       email: "lcwoo3145@gmail.com",

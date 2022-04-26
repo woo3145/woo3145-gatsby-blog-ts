@@ -1,12 +1,6 @@
 import { GatsbyNode } from "gatsby";
 import path from "path";
 
-const isOfType = <T>(
-  varToBeChecked: unknown,
-  propertyToCheckFor: keyof T
-): varToBeChecked is T =>
-  (varToBeChecked as T)[propertyToCheckFor] !== undefined;
-
 export const createPages: GatsbyNode["createPages"] = async ({
   actions,
   graphql,
