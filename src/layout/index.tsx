@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 
 import "./style.scss";
@@ -12,7 +13,7 @@ const Layout = ({ children }: Props) => {
     <div className="page-wrapper">
       <Header />
       <main className="page-contents">{children}</main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 };
