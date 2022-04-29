@@ -5,7 +5,7 @@ import Header from "../components/header/header";
 import "./style.scss";
 
 interface Props {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
 const Layout = ({ children }: Props) => {
