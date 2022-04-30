@@ -10,13 +10,25 @@ interface DataProps {
       title: string;
     };
   };
+  allMarkdownRemark: {
+    edges: {
+      node: Post;
+    }[];
+  };
 }
 
-const IndexRoute = ({ data: { site }, path }: PageProps<DataProps>) => {
+const IndexRoute = ({
+  data: { site, allMarkdownRemark },
+  path,
+}: PageProps<DataProps>) => {
+  const posts = allMarkdownRemark.edges.map(({ node }) => {
+    return node;
+  });
+
   return (
     <Layout>
       <Bio />
-      <PostList />
+      <PostList posts={posts} />
     </Layout>
   );
 };
@@ -25,6 +37,22 @@ export default IndexRoute;
 
 export const query = graphql`
   {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 500, truncate: true)
+          html
+          frontmatter {
+            author
+            categories
+            date(formatString: "MMMM DD, YYYY")
+            tags
+            title
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
         title

@@ -14,6 +14,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
         edges {
           node {
             id
+            excerpt(pruneLength: 500, truncate: true)
             html
             frontmatter {
               author
@@ -27,6 +28,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       }
     }
   `);
+  console.log(data);
 
   if (errors) {
     throw errors;

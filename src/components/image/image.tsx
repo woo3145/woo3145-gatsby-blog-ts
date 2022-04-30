@@ -38,7 +38,6 @@ const Image = ({ src, ...rest }: Props) => {
   const {
     node: { childrenImageSharp, publicURL },
   } = image;
-  console.log(image);
   // childrenImageSharp 객체가 없다면 publicURL을 이용해 이미지 태그를 만들어준다.
   if (!childrenImageSharp) {
     return <img src={publicURL} alt={publicURL} {...rest} />;

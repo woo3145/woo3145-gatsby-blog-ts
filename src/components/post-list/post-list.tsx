@@ -1,12 +1,26 @@
 import React from "react";
+import PostCard from "../post-card/post-card";
 
 import "./index.scss";
 
-const PostList = () => {
+interface Props {
+  posts: Post[];
+}
+
+const PostList = ({ posts }: Props) => {
   return (
     <div className="post-list-wrapper">
-      <div className="post-list">a</div>
-      <div className="tag-list">b</div>
+      <div className="post-list">
+        <h2 className="post-list-title">최근 포스트</h2>
+        <div className="post-list-column">
+          {posts.map((post) => {
+            return <PostCard post={post} />;
+          })}
+        </div>
+      </div>
+      <div className="tag-list">
+        <h4 className="tag-list-title">Tags</h4>
+      </div>
     </div>
   );
 };
