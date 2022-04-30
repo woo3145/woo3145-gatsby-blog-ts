@@ -4,6 +4,7 @@ import Layout from "../layout";
 import Bio from "../components/bio/bio";
 import PostList from "../components/post-list/post-list";
 import Post from "../models/post";
+import { getUniqueCategories } from "../utils/helpers";
 
 interface DataProps {
   site: {
@@ -25,11 +26,19 @@ const IndexRoute = ({
   const posts = allMarkdownRemark.edges.map(({ node }) => {
     return new Post(node);
   });
+  const categories = ["All", ...getUniqueCategories(posts)];
+  const [tabIdx, setTabIdx] = React.useState(0);
+  const onTabIdxChange = (idx: number) => setTabIdx(idx);
 
   return (
     <Layout>
       <Bio />
-      <PostList posts={posts} />
+      <PostList
+        posts={posts}
+        categories={categories}
+        tabIdx={tabIdx}
+        onTabIdxChange={onTabIdxChange}
+      />
     </Layout>
   );
 };

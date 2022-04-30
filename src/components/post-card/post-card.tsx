@@ -14,8 +14,12 @@ const PostCard = ({ post }: Props) => {
       <div className="post-card-metadata">
         <p className="post-card-metadata-date">{post.date}</p>
         <div className="post-card-metadata-categories">
-          {post.categories.map((category) => {
-            return <p className="category">{category}</p>;
+          {post.categories.map((category, idx) => {
+            return (
+              <p key={idx} className="category">
+                {category}
+              </p>
+            );
           })}
         </div>
       </div>

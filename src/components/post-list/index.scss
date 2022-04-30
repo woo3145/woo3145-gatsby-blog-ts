@@ -27,14 +27,37 @@
       height: auto;
     }
   }
-  .tag-list {
+  .category-list {
     width: 100%;
     height: auto;
-    .tag-list-title {
+    padding-left: 20px;
+    .category-list-title {
       font-size: 1.25rem;
       line-height: 1.4;
       padding: 20px 0;
       font-weight: 500;
+    }
+    .category-list-items {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      .category {
+        margin-right: 4px;
+        background-color: rgb(48, 48, 48);
+        padding: 8px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        color: white;
+      }
+      .category-select {
+        background-color: #4158d0;
+        background-image: linear-gradient(
+          43deg,
+          #4158d0 0%,
+          #c850c0 46%,
+          #ffcc70 100%
+        );
+      }
     }
   }
 }
