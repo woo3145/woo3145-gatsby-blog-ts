@@ -1,4 +1,4 @@
-interface Post {
+interface MarkdownRemarkNode {
   id: string;
   html: string;
   excerpt: string;

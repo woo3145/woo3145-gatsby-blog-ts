@@ -27,10 +27,24 @@
     transition: width ease 0.2s;
   }
   .post-card-metadata {
-    font-size: 0.8rem;
-    line-height: 1.4;
     margin-bottom: 12px;
+    .post-card-metadata-date {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .post-card-metadata-categories {
+      display: flex;
+      font-size: 0.85rem;
+      .category {
+        margin-right: 4px;
+        background-color: rgb(223, 223, 223);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+    }
   }
+
   .post-card-contents {
     color: #777;
     line-height: 1.4;

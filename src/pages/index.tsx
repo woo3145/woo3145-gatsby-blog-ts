@@ -3,6 +3,7 @@ import { graphql, PageProps } from "gatsby";
 import Layout from "../layout";
 import Bio from "../components/bio/bio";
 import PostList from "../components/post-list/post-list";
+import Post from "../models/post";
 
 interface DataProps {
   site: {
@@ -12,7 +13,7 @@ interface DataProps {
   };
   allMarkdownRemark: {
     edges: {
-      node: Post;
+      node: MarkdownRemarkNode;
     }[];
   };
 }
@@ -22,7 +23,7 @@ const IndexRoute = ({
   path,
 }: PageProps<DataProps>) => {
   const posts = allMarkdownRemark.edges.map(({ node }) => {
-    return node;
+    return new Post(node);
   });
 
   return (
