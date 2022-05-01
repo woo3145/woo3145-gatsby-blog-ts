@@ -1,3 +1,5 @@
+// github-markdown-theme
+
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -941,4 +943,21 @@
 
 .markdown-body ::-webkit-calendar-picker-indicator {
   filter: invert(50%);
+}
+
+.markdown-body {
+  .table-of-contents {
+    position: fixed;
+    top: 120px;
+    right: 0;
+    width: 400px;
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+    a {
+      text-decoration: none;
+      color: #9e9e9e;
+    }
+  }
 }
