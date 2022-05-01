@@ -9,7 +9,10 @@ interface Props {
 const PostContent = ({ html }: Props) => {
   return (
     <div className="post-content-wrapper">
-      <div className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </div>
   );
 };
