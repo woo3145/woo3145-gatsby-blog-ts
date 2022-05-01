@@ -46,7 +46,26 @@ const config: GatsbyConfig = {
       },
     },
     // gatsby에서 읽은 파일들 중 md파일을 해석하여 MarkDownRemark 노드로 변환해준다.
-    "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            // https://www.gatsbyjs.com/plugins/gatsby-remark-table-of-contents/ 마크다운 toc 생성 참고
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              exclude: "Table of Contents",
+              tight: false,
+              ordered: false,
+              fromHeading: 1,
+              toHeading: 6,
+              className: "table-of-contents",
+            },
+          },
+          `gatsby-remark-autolink-headers`,
+        ],
+      },
+    },
   ],
 };
 

@@ -28,7 +28,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
       }
     }
   `);
-  console.log(data);
 
   if (errors) {
     throw errors;
