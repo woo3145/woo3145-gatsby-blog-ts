@@ -34,16 +34,16 @@ export const createPages: GatsbyNode["createPages"] = async ({
     throw errors;
   }
   // 임시
-  const postsPages = path.resolve("./src/templates/Test.tsx");
+  const postsPages = path.resolve("./src/templates/post-template.tsx");
 
   // 가져온 글들로 정적 페이지를 생성해준다.
+  // https://www.gatsbyjs.com/docs/tutorial/part-6/#render-post-contents-in-the-blog-post-page-template
   data.allMarkdownRemark.edges.forEach(({ node }): any => {
     createPage({
       component: postsPages,
       path: node.id,
       context: {
-        html: node.html,
-        title: node.frontmatter.title,
+        id: node.id,
       },
     });
   });

@@ -1,0 +1,11 @@
+.post-wrapper {
+  width: 100%;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+
+  .post {
+    width: 70%;
+    padding: 0 20px;
+  }
+}
