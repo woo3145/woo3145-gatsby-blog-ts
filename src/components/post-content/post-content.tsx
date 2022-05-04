@@ -35,13 +35,31 @@ const PostContent = ({ html }: Props) => {
   // index가 바뀌면 toc의 li태그에 클래스를 주어 스타일을 변화시킴
   useEffect(() => {
     const toc = document.querySelectorAll<HTMLLIElement>(
-      ".table-of-contents > ul li"
+      ".table-of-contents > ul li a"
     );
     for (let i = 0; i < toc.length; ++i) {
       if (active === i) toc[i]?.classList.add("active");
       else toc[i]?.classList.remove("active");
     }
   }, [active]);
+
+  useEffect(() => {
+    const toc = document.querySelectorAll<HTMLLIElement>(
+      ".table-of-contents > ul li a"
+    );
+    const onClick = (idx: number) => {
+      setActive(idx);
+    };
+
+    for (let i = 0; i < toc.length; ++i) {
+      toc[i].addEventListener("click", () => onClick(i));
+    }
+    return () => {
+      for (let i = 0; i < toc.length; ++i) {
+        toc[i].removeEventListener("click", () => onClick(i));
+      }
+    };
+  }, []);
 
   return (
     <div className="post-content-wrapper">
