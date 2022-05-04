@@ -955,9 +955,19 @@
     @media (max-width: 1200px) {
       display: none;
     }
-    a {
-      text-decoration: none;
-      color: #9e9e9e;
+
+    ul {
+      a {
+        color: #9e9e9e;
+      }
+      .active {
+        & > a,
+        p > a {
+          transition: all ease 0.4s;
+          transform: translateX(-8px);
+          color: black;
+        }
+      }
     }
   }
 }
