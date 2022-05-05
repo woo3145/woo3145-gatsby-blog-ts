@@ -32,18 +32,35 @@ export const createPages: GatsbyNode["createPages"] = async ({
   if (errors) {
     throw errors;
   }
-  // 임시
-  const postsPages = path.resolve("./src/templates/post-template.tsx");
+  const posts = data.allMarkdownRemark.edges;
 
+  const postPages = path.resolve("./src/templates/post-template.tsx");
+  const postListPages = path.resolve("./src/templates/postList-template.tsx");
+
+  const categorySet = new Set(["All"]);
+  posts.forEach(({ node }: any) => {
+    const categories = node.frontmatter.categories.split(" ");
+    categories.forEach((category: string) => categorySet.add(category));
+  });
   // 가져온 글들로 정적 페이지를 생성해준다.
   // https://www.gatsbyjs.com/docs/tutorial/part-6/#render-post-contents-in-the-blog-post-page-template
-  data.allMarkdownRemark.edges.forEach(({ node }): any => {
+  posts.forEach(({ node }): any => {
     createPage({
-      component: postsPages,
+      component: postPages,
       path: node.id,
       context: {
         id: node.id,
       },
     });
+  });
+
+  createPage({
+    component: postListPages,
+    path: "/posts",
+    context: {
+      categories: [...categorySet],
+      category: "All",
+      results: posts,
+    },
   });
 };

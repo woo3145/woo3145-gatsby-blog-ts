@@ -11,6 +11,12 @@ const PostContent = ({ html }: Props) => {
   const [headers, setHeaders] = useState<any>([]);
   const [active, setActive] = useState(0);
 
+  const getTocElements = () => {
+    const toc = document.querySelectorAll<HTMLLinkElement>(
+      ".table-of-contents > ul li a"
+    );
+    return toc;
+  };
   // toc 된 h2, h3 요소를 저장한다.
   useEffect(() => {
     setHeaders(
@@ -32,25 +38,22 @@ const PostContent = ({ html }: Props) => {
     });
   }, [y]);
 
-  // index가 바뀌면 toc의 li태그에 클래스를 주어 스타일을 변화시킴
+  // index가 바뀌면 toc의 a태그에 클래스를 주어 스타일을 변화시킴
   useEffect(() => {
-    const toc = document.querySelectorAll<HTMLLIElement>(
-      ".table-of-contents > ul li a"
-    );
+    const toc = getTocElements();
+
     for (let i = 0; i < toc.length; ++i) {
       if (active === i) toc[i]?.classList.add("active");
       else toc[i]?.classList.remove("active");
     }
   }, [active]);
 
+  // toc에 클릭이벤트를 추가해줌
   useEffect(() => {
-    const toc = document.querySelectorAll<HTMLLIElement>(
-      ".table-of-contents > ul li a"
-    );
+    const toc = getTocElements();
     const onClick = (idx: number) => {
       setActive(idx);
     };
-
     for (let i = 0; i < toc.length; ++i) {
       toc[i].addEventListener("click", () => onClick(i));
     }
