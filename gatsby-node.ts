@@ -63,4 +63,17 @@ export const createPages: GatsbyNode["createPages"] = async ({
       results: posts,
     },
   });
+  [...categorySet].forEach((category) => {
+    createPage({
+      component: postListPages,
+      path: `/posts/${category}`,
+      context: {
+        categories: [...categorySet],
+        category,
+        results: posts.filter(({ node }) =>
+          node.frontmatter.categories.includes(category)
+        ),
+      },
+    });
+  });
 };

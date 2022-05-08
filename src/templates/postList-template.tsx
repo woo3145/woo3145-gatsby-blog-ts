@@ -1,4 +1,7 @@
+import { navigate } from "gatsby";
 import React from "react";
+import PostListHeader from "../components/post-list-header/post-list-header";
+import PostList from "../components/post-list/post-list";
 import Layout from "../layout";
 import Post from "../models/post";
 
@@ -15,10 +18,22 @@ const PostListTemplate = ({ pageContext }: Props) => {
   const posts = results.map(({ node }) => {
     return new Post(node);
   });
-  console.log(posts);
+
+  const tabIdx = categories.findIndex((c) => c === category);
+  const onTabIdxChange = (idx: number) => {
+    if (idx === 0) return navigate("/posts");
+    return navigate(`/posts/${categories[idx]}`);
+  };
+
   return (
     <Layout>
-      <div>hh</div>
+      <PostListHeader title={category} />
+      <PostList
+        posts={posts}
+        categories={categories}
+        tabIdx={tabIdx}
+        onTabIdxChange={onTabIdxChange}
+      />
     </Layout>
   );
 };
