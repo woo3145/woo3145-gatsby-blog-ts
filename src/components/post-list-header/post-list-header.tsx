@@ -4,12 +4,14 @@ import "./index.scss";
 
 interface Props {
   title: string;
+  postsLen: number;
 }
 
-const PostListHeader = ({ title }: Props) => {
+const PostListHeader = ({ title, postsLen }: Props) => {
   return (
     <div className="post-list-header-wrapper">
-      <h1>{title}</h1>
+      <h1># {title}</h1>
+      <p>posts {postsLen}</p>
     </div>
   );
 };

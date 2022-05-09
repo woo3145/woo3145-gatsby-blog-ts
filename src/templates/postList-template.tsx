@@ -27,7 +27,7 @@ const PostListTemplate = ({ pageContext }: Props) => {
 
   return (
     <Layout>
-      <PostListHeader title={category} />
+      <PostListHeader title={category} postsLen={posts.length} />
       <PostList
         posts={posts}
         categories={categories}
