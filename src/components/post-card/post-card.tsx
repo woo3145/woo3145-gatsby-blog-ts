@@ -11,7 +11,7 @@ interface Props {
 const PostCard = ({ post }: Props) => {
   return (
     <article className="post-card-wrapper">
-      <Link to={post.id}>
+      <Link to={`/${post.id}`}>
         <h3 className="post-card-title">{post.title}</h3>
         <div className="post-card-metadata">
           <p className="post-card-metadata-date">{post.date}</p>
