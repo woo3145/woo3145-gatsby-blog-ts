@@ -11,7 +11,7 @@ interface Props {
   onTabIdxChange: (v: number) => void;
 }
 
-const PostList = ({ posts, categories, tabIdx, onTabIdxChange }: Props) => {
+const PostCardList = ({ posts, categories, tabIdx, onTabIdxChange }: Props) => {
   const filteredPosts = useMemo(() => {
     if (categories[tabIdx] === "All") return posts;
 
@@ -50,4 +50,4 @@ const PostList = ({ posts, categories, tabIdx, onTabIdxChange }: Props) => {
   );
 };
 
-export default PostList;
+export default PostCardList;

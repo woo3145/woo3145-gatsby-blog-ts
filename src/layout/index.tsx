@@ -1,16 +1,14 @@
 import React from "react";
-import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
-import useScroll from "../hooks/useScroll";
+import Footer from "../components/footer/footer";
 
-import "./style.scss";
+import "./index.scss";
 
 interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
 const Layout = ({ children }: Props) => {
-  const { y } = useScroll();
   return (
     <div className="page-wrapper">
       <Header />

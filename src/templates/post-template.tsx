@@ -1,8 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
-import PostContainer from "../components/post-container/post-container";
-import useScroll from "../hooks/useScroll";
 import Layout from "../layout";
+import PostContainer from "../components/post-container/post-container";
 import Post from "../models/post";
 
 interface Props {

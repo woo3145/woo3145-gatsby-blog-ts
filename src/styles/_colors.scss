@@ -1,11 +1,18 @@
 // 라이트 모드
 html {
   --background-color: #ffffff;
+
+  --header-shadow-color: rgba(0, 0, 0, 0.15);
+  --primary-text-color: #171717;
+
   --primary-color: #0f044c;
   --primary-color-accent: #273066;
 }
 
 // 다크 모드
 html[data-theme="dark"] {
-  --background-color: #000000;
+  --background-color: #171717;
+
+  --header-shadow-color: rgba(83, 83, 83, 0.2);
+  --primary-text-color: #ededed;
 }

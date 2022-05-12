@@ -1,8 +1,9 @@
 import { navigate } from "gatsby";
 import React from "react";
-import PostListHeader from "../components/post-list-header/post-list-header";
-import PostList from "../components/post-list/post-list";
 import Layout from "../layout";
+
+import PostListHeader from "../components/post-list-header/post-list-header";
+import PostCardList from "../components/post-card-list/post-card-list";
 import Post from "../models/post";
 
 interface Props {
@@ -28,7 +29,7 @@ const PostListTemplate = ({ pageContext }: Props) => {
   return (
     <Layout>
       <PostListHeader title={category} postsLen={posts.length} />
-      <PostList
+      <PostCardList
         posts={posts}
         categories={categories}
         tabIdx={tabIdx}

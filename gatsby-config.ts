@@ -4,6 +4,7 @@ import metaConfig from "./gatsby-meta-config";
 
 const config: GatsbyConfig = {
   siteMetadata: metaConfig,
+
   plugins: [
     "gatsby-plugin-sass",
     {

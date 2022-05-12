@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql, PageProps } from "gatsby";
 import Layout from "../layout";
 import Bio from "../components/bio/bio";
-import PostList from "../components/post-list/post-list";
+import PostCardList from "../components/post-card-list/post-card-list";
 import Post from "../models/post";
 import { getUniqueCategories } from "../utils/helpers";
 
@@ -33,7 +33,7 @@ const IndexRoute = ({
   return (
     <Layout>
       <Bio />
-      <PostList
+      <PostCardList
         posts={posts}
         categories={categories}
         tabIdx={tabIdx}

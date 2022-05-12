@@ -1,12 +1,12 @@
 @use "../../styles/mixins" as *;
-@use "../../styles//colors" as *;
+@use "../../styles/colors" as *;
 
 .header-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
   height: auto;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: var(--header-shadow-color) 1.95px 1.95px 2.6px;
 
   .header {
     display: flex;
@@ -24,6 +24,7 @@
         margin-right: 20px;
         display: inline-block;
         transition: all ease-in 0.2s;
+        color: var(--primary-text-color);
         &:hover {
           transform: translateY(2px);
         }
@@ -36,7 +37,7 @@
         border-radius: 30px;
         cursor: pointer;
         overflow: hidden;
-        &-inner {
+        .dark-mode-btn-inner {
           width: 20px;
           height: 20px;
           background-color: #f1d00a;
@@ -44,7 +45,7 @@
           position: relative;
           transition: all 0.4s;
 
-          &:before {
+          .dark-mode-btn-inner:before {
             content: "";
             position: absolute;
             left: -40%;
@@ -67,6 +68,7 @@
     .header-title {
       font-size: 18px;
       font-weight: 600;
+      color: var(--primary-text-color);
       @include md {
         font-size: 20px;
       }
