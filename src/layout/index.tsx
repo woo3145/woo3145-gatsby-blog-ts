@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer";
 
 import "./index.scss";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 
 interface Props {
   children: JSX.Element | JSX.Element[];

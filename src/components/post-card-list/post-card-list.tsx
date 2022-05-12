@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import Post from "../../models/post";
 import PostCard from "../post-card/post-card";
-
 import "./index.scss";
 
 interface Props {
