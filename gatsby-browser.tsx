@@ -1,5 +1,6 @@
-import * as React from "react";
 import type { GatsbyBrowser } from "gatsby";
+
+// gatsby-browser.js
 
 export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
   element,

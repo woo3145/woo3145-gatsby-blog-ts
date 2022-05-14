@@ -51,7 +51,7 @@ export const query = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 500, truncate: true)
+          excerpt(pruneLength: 200, truncate: true)
           html
           frontmatter {
             author

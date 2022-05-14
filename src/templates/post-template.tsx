@@ -31,7 +31,7 @@ export const query = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
-      excerpt(pruneLength: 500, truncate: true)
+      excerpt(pruneLength: 200, truncate: true)
       frontmatter {
         author
         categories

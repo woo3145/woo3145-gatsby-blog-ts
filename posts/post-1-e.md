@@ -30,48 +30,48 @@ neOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[10].oneO
 
 **잘못된 예**
 
-```
+```js
 import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
 
 import "./index.scss";
 
 <div className="page-wrapper">
-    <Header/>
-    <main>{children}</main>
-    <Footer/>
-</div>
+  <Header />
+  <main>{children}</main>
+  <Footer />
+</div>;
 ```
 
 **옳은 예**
 
-```
+```js
 import "./index.scss";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 
 <div className="page-wrapper">
-    <Header/>
-    <main>{children}</main>
-    <Footer/>
-</div>
+  <Header />
+  <main>{children}</main>
+  <Footer />
+</div>;
 ```
 
 ### 2. 웹팩의 MiniCssExtractPlugin 설정 수정 (css 모듈을 사용 할 경우)
 
-```
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+```js
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 plugins: [
-   new MiniCssExtractPlugin({
-       ignoreOrder: true
-    })
-]
+  new MiniCssExtractPlugin({
+    ignoreOrder: true,
+  }),
+];
 ```
 
 ### 3. 웹팩 플러그인을 사용하여 오류메시지를 필터 (css 모듈을 사용 할 경우)
 
-```
+```js
 // 설치
 npm i webpack-filter-warnings-plugin
 

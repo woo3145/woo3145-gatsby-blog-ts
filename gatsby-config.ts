@@ -63,6 +63,37 @@ const config: GatsbyConfig = {
               className: "table-of-contents",
             },
           },
+          // https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/ 마크다운 코드블럭 하이라이팅 참고
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              languageExtensions: [
+                {
+                  language: "superscript",
+                  extend: "javascript",
+                  definition: {
+                    superscript_types: /(SuperType)/,
+                  },
+                  insertBefore: {
+                    function: {
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+              ],
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+            },
+          },
           `gatsby-remark-autolink-headers`,
         ],
       },
