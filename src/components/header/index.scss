@@ -57,12 +57,6 @@
             transition: all 0.4s;
           }
         }
-        .active {
-          transform: translateX(calc(50px - 30px));
-          &:before {
-            transform: scale(1);
-          }
-        }
       }
     }
     &-title {
@@ -72,6 +66,15 @@
       @include md {
         font-size: 20px;
       }
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .dark-mode-btn-inner {
+    transform: translateX(calc(50px - 30px));
+    &:before {
+      transform: scale(1) !important;
     }
   }
 }

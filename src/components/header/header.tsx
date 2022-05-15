@@ -13,13 +13,6 @@ const Header = () => {
 
   useEffect(() => {
     setLocalStorageItem("isDarkMode", isDarkMode);
-    if (isDarkMode === "dark") {
-      document.getElementById("dark-mode-btn-inner")?.classList.add("active");
-    } else {
-      document
-        .getElementById("dark-mode-btn-inner")
-        ?.classList.remove("active");
-    }
     document.documentElement.setAttribute("data-theme", isDarkMode);
   }, [isDarkMode]);
 
@@ -44,10 +37,7 @@ const Header = () => {
               setIsDarkMode(isDarkMode === "light" ? "dark" : "light")
             }
           >
-            <div
-              className={`dark-mode-btn-inner`}
-              id="dark-mode-btn-inner"
-            ></div>
+            <div className="dark-mode-btn-inner"></div>
           </div>
         </div>
       </div>
