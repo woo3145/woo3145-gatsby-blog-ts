@@ -7,6 +7,8 @@ interface DataProps {
     siteMetadata: {
       title: string;
       siteUrl: string;
+      description: string;
+      ogImage: string;
       autor: {
         name: string;
         position: string;
@@ -27,6 +29,8 @@ export const useSiteMetadata = () => {
         siteMetadata {
           title
           siteUrl
+          description
+          ogImage
           autor {
             name
             position

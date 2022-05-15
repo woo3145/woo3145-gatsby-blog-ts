@@ -1,6 +1,8 @@
 const metaConfig: Record<string, unknown> = {
   title: `woo3145's Blog`,
-  siteUrl: `https://woo3145.netlify.app`,
+  siteUrl: `https://cw3145.netlify.app`,
+  description: "Changwoo Lee의 개발 블로그 입니다.",
+  ogImage: "/og-image.png",
   autor: {
     name: "이창우",
     position: "프론트엔드 개발자",

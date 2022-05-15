@@ -5,6 +5,7 @@ import Layout from "../layout";
 import PostListHeader from "../components/post-list-header/post-list-header";
 import PostCardList from "../components/post-card-list/post-card-list";
 import Post from "../models/post";
+import SEO from "../components/seo/seo";
 
 interface Props {
   pageContext: {
@@ -28,6 +29,7 @@ const PostListTemplate = ({ pageContext }: Props) => {
 
   return (
     <Layout>
+      <SEO title={"Posts"} />
       <PostListHeader title={category} postsLen={posts.length} />
       <PostCardList
         posts={posts}
