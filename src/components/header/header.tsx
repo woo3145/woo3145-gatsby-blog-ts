@@ -1,24 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSiteMetadata } from "../../hooks/useSiteMetadate";
 import { Link } from "gatsby";
 
 import "./index.scss";
+import { getLocalStorageItem, setLocalStorageItem } from "../../utils/helpers";
 
 const Header = () => {
+  const [isDarkMode, setIsDarkMode] = useState(
+    getLocalStorageItem("isDarkMode") || "light"
+  );
   const { title } = useSiteMetadata();
 
-  const darkModeToggle = () => {
-    const element = document.getElementById("dark-mode-btn-inner");
-    if (element) {
-      if (element.classList.contains("active")) {
-        element.classList.remove("active");
-        document.documentElement.setAttribute("data-theme", "light");
-      } else {
-        element.classList.add("active");
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    }
-  };
+  useEffect(() => {
+    setLocalStorageItem("isDarkMode", isDarkMode);
+    document.documentElement.setAttribute("data-theme", isDarkMode);
+  }, [isDarkMode]);
+
   return (
     <header className="header-wrapper">
       <div className="header">
@@ -34,8 +31,13 @@ const Header = () => {
           <Link to="/posts" className="link">
             posts
           </Link>
-          <div className="dark-mode-btn" onClick={darkModeToggle}>
-            <div className="dark-mode-btn-inner" id="dark-mode-btn-inner"></div>
+          <div
+            className="dark-mode-btn"
+            onClick={() =>
+              setIsDarkMode(isDarkMode === "light" ? "dark" : "light")
+            }
+          >
+            <div className="dark-mode-btn-inner" data-theme={isDarkMode}></div>
           </div>
         </div>
       </div>
