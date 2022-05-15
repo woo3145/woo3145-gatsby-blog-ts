@@ -15,7 +15,7 @@
     @include max-width;
     padding: 20px 28px;
 
-    .header-menu {
+    &-menu {
       display: flex;
       align-items: center;
       .link {
@@ -37,7 +37,7 @@
         border-radius: 30px;
         cursor: pointer;
         overflow: hidden;
-        .dark-mode-btn-inner {
+        &-inner {
           width: 20px;
           height: 20px;
           background-color: #f1d00a;
@@ -45,7 +45,7 @@
           position: relative;
           transition: all 0.4s;
 
-          .dark-mode-btn-inner:before {
+          &:before {
             content: "";
             position: absolute;
             left: -40%;
@@ -65,7 +65,7 @@
         }
       }
     }
-    .header-title {
+    &-title {
       font-size: 18px;
       font-weight: 600;
       color: var(--primary-text-color);

@@ -1,4 +1,5 @@
 @use "../../styles/mixins" as *;
+@use "../../styles/colors" as *;
 
 .bio-wrapper {
   display: flex;
@@ -8,7 +9,7 @@
   height: auto;
   max-width: 720px;
   padding: 40px 20px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  box-shadow: var(--bio-shadow-color) 0px 1px 0px;
   transition: all ease 0.4s;
   @include md {
     padding: 60px 0px;
