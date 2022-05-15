@@ -1,22 +1,16 @@
-import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../layout";
 import PostContainer from "../components/post-container/post-container";
 import Post from "../models/post";
 
 interface Props {
-  data: {
-    markdownRemark: MarkdownRemarkNode;
-    site: {
-      siteMetadata: {
-        title: string;
-      };
-    };
+  pageContext: {
+    post: MarkdownRemarkNode;
   };
 }
 
-const PostTemplate = ({ data }: Props) => {
-  const post = new Post(data.markdownRemark);
+const PostTemplate = ({ pageContext }: Props) => {
+  const post = new Post(pageContext.post);
   return (
     <Layout>
       <PostContainer post={post} />
@@ -25,25 +19,3 @@ const PostTemplate = ({ data }: Props) => {
 };
 
 export default PostTemplate;
-
-export const query = graphql`
-  query ($id: String) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      excerpt(pruneLength: 200, truncate: true)
-      frontmatter {
-        author
-        categories
-        date(formatString: "MMMM DD, YYYY")
-        tags
-        title
-      }
-    }
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;

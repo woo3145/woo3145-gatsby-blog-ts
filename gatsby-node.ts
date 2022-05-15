@@ -14,7 +14,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
         edges {
           node {
             id
-            excerpt(pruneLength: 500, truncate: true)
+            excerpt(pruneLength: 200, truncate: true)
             html
             frontmatter {
               author
@@ -50,6 +50,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       path: node.id,
       context: {
         id: node.id,
+        post: node,
       },
     });
   });
@@ -63,6 +64,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       results: posts,
     },
   });
+
   [...categorySet].forEach((category) => {
     createPage({
       component: postListPages,
