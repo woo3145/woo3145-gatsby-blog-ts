@@ -15,7 +15,7 @@ const Header = () => {
     setLocalStorageItem("isDarkMode", isDarkMode);
     document.documentElement.setAttribute("data-theme", isDarkMode);
   }, [isDarkMode]);
-
+  console.log(isDarkMode);
   return (
     <header className="header-wrapper">
       <div className="header">
@@ -37,7 +37,11 @@ const Header = () => {
               setIsDarkMode(isDarkMode === "light" ? "dark" : "light")
             }
           >
-            <div className="dark-mode-btn-inner" data-theme={isDarkMode}></div>
+            <div
+              className={`dark-mode-btn-inner ${
+                isDarkMode === "dark" ? "active" : ""
+              }`}
+            ></div>
           </div>
         </div>
       </div>
