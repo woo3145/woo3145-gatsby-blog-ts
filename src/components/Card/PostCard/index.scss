@@ -1,0 +1,61 @@
+@use "../../../styles/colors";
+
+.post-card-wrapper {
+  cursor: pointer;
+  transition: transform ease 0.2s;
+
+  .post-card-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+    color: var(--primary-text-color);
+
+    &:after {
+      position: absolute;
+      content: "";
+      background-image: var(--background-image-underline);
+      width: 0;
+      height: 12px;
+      left: 0;
+      bottom: 0;
+      z-index: -2;
+      opacity: 60%;
+      transition: width ease 0.2s;
+    }
+  }
+
+  .post-card-metadata {
+    margin-bottom: 12px;
+    &-date {
+      color: var(--primary-text-color);
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    &-categories {
+      display: flex;
+      font-size: 0.85rem;
+      color: var(--tag-text-color);
+      .category {
+        margin-right: 4px;
+        background-color: var(--background-color-post-card-tag);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .post-card-contents {
+    color: var(--second-text-color);
+    line-height: 1.4;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    .post-card-title:after {
+      width: 100%;
+    }
+  }
+}

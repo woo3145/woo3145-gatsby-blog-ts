@@ -1,6 +1,6 @@
 import { navigate } from "gatsby";
 import React from "react";
-import Layout from "../layout";
+import Layout from "../components/Layout/layout";
 
 import PostListHeader from "../components/post-list-header/post-list-header";
 import PostCardList from "../components/post-card-list/post-card-list";

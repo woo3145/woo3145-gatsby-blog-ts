@@ -1,12 +1,12 @@
 import React from "react";
-import { useSiteMetadata } from "../../hooks/useSiteMetadate";
-import Image from "../image/image";
-import SocialBar from "../social-bar/social-bar";
+import { useSiteMetadata } from "../../../hooks/useSiteMetadate";
 
 import "./index.scss";
+import Image from "../../../components/image/image";
+import SocialBar from "../../../components/social-bar/social-bar";
 
 const Bio = () => {
-  const { title, autor } = useSiteMetadata();
+  const { autor } = useSiteMetadata();
   return (
     <div className="bio-wrapper">
       <div className="bio-image-container">
