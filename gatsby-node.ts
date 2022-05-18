@@ -35,7 +35,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const posts = data.allMarkdownRemark.edges;
 
   const postPages = path.resolve("./src/templates/post-template.tsx");
-  const postListPages = path.resolve("./src/templates/post-list-template.tsx");
+  const postListPages = path.resolve("./src/templates/posts-template.tsx");
 
   const categorySet = new Set(["All"]);
   posts.forEach(({ node }: any) => {

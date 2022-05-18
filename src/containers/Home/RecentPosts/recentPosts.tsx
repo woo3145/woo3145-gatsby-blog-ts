@@ -3,7 +3,7 @@ import { usePosts } from "../../../hooks/usePosts";
 import { getUniqueCategories } from "../../../utils/helpers";
 
 import "./index.scss";
-import PostCard from "../../../components/Card/PostCard/postCard";
+import PostCard from "../../../components/Cards/PostCard/postCard";
 
 const RecentPosts = () => {
   const posts = usePosts();

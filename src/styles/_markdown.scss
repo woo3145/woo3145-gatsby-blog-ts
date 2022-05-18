@@ -1,5 +1,6 @@
 // github-markdown-theme
-@use "../styles/colors";
+@use "../styles/colors" as *;
+@use "../styles/mixins" as *;
 
 .markdown-body {
   -ms-text-size-adjust: 100%;
@@ -952,9 +953,9 @@
     top: 120px;
     right: 20px;
     width: 400px;
-
-    @media (max-width: 1200px) {
-      display: none;
+    display: none;
+    @include xl {
+      display: block;
     }
 
     ul li {

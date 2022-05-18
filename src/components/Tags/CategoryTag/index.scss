@@ -1,0 +1,26 @@
+.category-tag {
+  margin-right: 4px;
+  background-color: var(--background-color-tag);
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  z-index: 0;
+  &:hover {
+    transition: background ease 0.2s;
+    background-color: var(--background-color-tag_hover);
+  }
+}
+.category-tag-select {
+  position: relative;
+}
+.category-tag-select:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: categorySelect 0.4s ease forwards;
+  border-radius: 4px;
+  z-index: -1;
+  background-image: var(--background-image-tag);
+}

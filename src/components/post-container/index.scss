@@ -1,3 +1,5 @@
+@use "../../styles/mixins" as *;
+
 .post-wrapper {
   width: 100%;
   padding-top: 40px;
@@ -5,7 +7,10 @@
   flex-direction: column;
 
   .post {
-    width: 70%;
+    width: 100%;
+    @include xl {
+      width: 70%;
+    }
     padding: 0 20px;
   }
 }

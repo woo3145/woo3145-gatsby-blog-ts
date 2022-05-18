@@ -11,6 +11,11 @@
     @content;
   }
 }
+@mixin xl {
+  @media (min-width: $min-screen-xl) {
+    @content;
+  }
+}
 
 @mixin max-width {
   width: 100%;
