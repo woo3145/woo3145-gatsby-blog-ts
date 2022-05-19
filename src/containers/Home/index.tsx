@@ -2,7 +2,7 @@ import React from "react";
 import Bio from "./Bio/bio";
 import RecentPosts from "./RecentPosts/recentPosts";
 
-const Home = () => {
+const HomePageContainer = () => {
   return (
     <>
       <Bio />
@@ -11,4 +11,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePageContainer;

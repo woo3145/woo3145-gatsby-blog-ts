@@ -1,0 +1,27 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/colors" as *;
+
+.post-toc {
+  position: sticky;
+  top: 80px;
+  padding-left: 20px;
+  width: 400px;
+  max-height: 100vh;
+  display: none;
+  @include xl {
+    display: flex;
+  }
+
+  ul li {
+    margin-top: 16px;
+    a {
+      color: var(--second-text-color);
+      display: block;
+    }
+    .active {
+      transition: all ease 0.4s;
+      transform: translateX(-8px);
+      color: var(--primary-text-color);
+    }
+  }
+}

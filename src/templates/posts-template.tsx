@@ -3,8 +3,8 @@ import Layout from "../components/Layout/layout";
 
 import Post from "../models/post";
 import SEO from "../components/seo/seo";
-import Posts from "../containers/Posts";
 import { useSiteMetadata } from "../hooks/useSiteMetadate";
+import PostsPageConainer from "../containers/Posts";
 
 interface Props {
   pageContext: {
@@ -24,7 +24,11 @@ const PostListTemplate = ({ pageContext }: Props) => {
   return (
     <Layout>
       <SEO title={`${title} - Posts`} />
-      <Posts posts={posts} categories={categories} category={category} />
+      <PostsPageConainer
+        posts={posts}
+        categories={categories}
+        category={category}
+      />
     </Layout>
   );
 };

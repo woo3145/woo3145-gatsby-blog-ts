@@ -946,28 +946,3 @@
 .markdown-body ::-webkit-calendar-picker-indicator {
   filter: invert(50%);
 }
-
-.markdown-body {
-  .table-of-contents {
-    position: fixed;
-    top: 120px;
-    right: 20px;
-    width: 400px;
-    display: none;
-    @include xl {
-      display: block;
-    }
-
-    ul li {
-      a {
-        color: var(--second-text-color);
-        display: block;
-      }
-      .active {
-        transition: all ease 0.4s;
-        transform: translateX(-8px);
-        color: var(--primary-text-color);
-      }
-    }
-  }
-}

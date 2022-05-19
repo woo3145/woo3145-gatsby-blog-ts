@@ -16,6 +16,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
             id
             excerpt(pruneLength: 200, truncate: true)
             html
+            tableOfContents
             frontmatter {
               author
               categories

@@ -1,0 +1,36 @@
+@use "../../../styles/colors";
+
+.post-header-wrapper {
+  width: 100%;
+  margin-bottom: 40px;
+  .post-header-categories {
+    display: flex;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    .category {
+      margin-right: 4px;
+      background-color: var(--background-color-post-card-tag);
+      color: var(--tag-text-color);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
+  .post-header-title {
+    color: var(--primary-text-color);
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    margin-bottom: 8px;
+  }
+
+  .post-header-metadata {
+    text-align: right;
+    color: var(--second-text-color);
+    span {
+      margin-left: 8px;
+    }
+    strong {
+      font-weight: 800;
+      color: var(--primary-text-color);
+    }
+  }
+}

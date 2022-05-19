@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../components/Layout/layout";
-import PostContainer from "../components/post-container/post-container";
 import Post from "../models/post";
 import SEO from "../components/seo/seo";
+import PostPageContainer from "../containers/Post";
 
 interface Props {
   pageContext: {
@@ -15,7 +15,7 @@ const PostTemplate = ({ pageContext }: Props) => {
   return (
     <Layout>
       <SEO title={post.title} description={post.excerpt} />
-      <PostContainer post={post} />
+      <PostPageContainer post={post} />
     </Layout>
   );
 };

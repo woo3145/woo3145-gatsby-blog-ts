@@ -1,8 +1,7 @@
-import { navigate } from "gatsby";
 import React from "react";
 import Post from "../../models/post";
 import PostCardList from "./PostCardList/postCardList";
-import PostsPageHeader from "./PostsPageHeader.tsx/postsPageHeader";
+import PostsPageHeader from "./PostsPageHeader/postsPageHeader";
 
 interface Props {
   posts: Post[];
@@ -10,7 +9,7 @@ interface Props {
   category: string;
 }
 
-const Posts = ({ posts, categories, category }: Props) => {
+const PostsPageConainer = ({ posts, categories, category }: Props) => {
   return (
     <>
       <PostsPageHeader title={category} postsCount={posts.length} />
@@ -19,4 +18,4 @@ const Posts = ({ posts, categories, category }: Props) => {
   );
 };
 
-export default Posts;
+export default PostsPageConainer;
