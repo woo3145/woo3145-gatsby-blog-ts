@@ -946,3 +946,13 @@
 .markdown-body ::-webkit-calendar-picker-indicator {
   filter: invert(50%);
 }
+
+.markdown-body {
+  h2:before,
+  h3:before {
+    content: "";
+    display: block;
+    height: 4rem;
+    margin-top: -4rem;
+  }
+}
