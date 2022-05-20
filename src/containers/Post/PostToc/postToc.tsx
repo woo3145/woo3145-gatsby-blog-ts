@@ -1,59 +1,47 @@
 import React, { useEffect, useState } from "react";
-import useScroll from "../../../hooks/useScroll";
 
 import "./index.scss";
 
 interface Props {
   html: string;
-  headers: any[];
 }
-const PostToc = ({ html, headers }: Props) => {
-  const { y } = useScroll();
-  const [active, setActive] = useState(0);
-
-  const getTocElements = () => {
-    const toc = document.querySelectorAll<HTMLLinkElement>(
-      ".post-toc > ul li a"
+const PostToc = ({ html }: Props) => {
+  const getHeaderElements = () => {
+    const headers = document.querySelectorAll<HTMLHeadingElement>(
+      ".markdown-body > h2, .markdown-body > h3"
     );
-    return toc;
+    return headers;
   };
-  // 요소.offsetTop - height : 요소까지의 스크롤 거리가 나옴
-  // +180은 요소를 어느정도 보여준뒤 인덱스를 바꾸기 위해 추가함
+  // IntersectionObserver
+  // #링크로 페이지의 중간으로 이동해도 안읽은 주제는 활성화가 되지 않도록 구현하기 위함
+  // https://heropy.blog/2019/10/27/intersection-observer/ 참고
   useEffect(() => {
-    const height = window.innerHeight;
-    headers.forEach((header: HTMLHeadingElement, i: number) => {
-      //   console.log(header.offsetTop - height, y);
-
-      if (header.offsetTop - height + 400 < y) {
-        setActive(i);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // entry로 해당 헤더에 맞는 toc 태그를 가져온다.
+          const headerElement = entry.target;
+          const toc = document.querySelectorAll(
+            `.post-toc a[href*="${encodeURI(headerElement.id)}"]`
+          );
+          // 헤더가 보일 때 toc-active 클래스를 추가하여 toc를 활성화 시키고, (읽었다는 표시)
+          // 헤더가 *안보이면서* 요소의 top이 음수가 아니면 뷰의 밑에 있다는 의미이므로 toc 비활성화 시킴
+          if (entry.isIntersecting) {
+            toc[0].classList.add("toc-active");
+          } else if (0 < entry.boundingClientRect.top) {
+            toc[0].classList.remove("toc-active");
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px 0px 0px",
       }
+    );
+    // 헤더를 가져와서 관찰 시작
+    const headers = getHeaderElements();
+    headers.forEach((headerElement) => {
+      observer.observe(headerElement);
     });
-  }, [y]);
-
-  // index가 바뀌면 toc의 a태그에 클래스를 주어 스타일을 변화시킴
-  useEffect(() => {
-    const toc = getTocElements();
-
-    for (let i = 0; i < toc.length; ++i) {
-      if (active === i) toc[i]?.classList.add("active");
-      else toc[i]?.classList.remove("active");
-    }
-  }, [active]);
-
-  // toc에 클릭이벤트를 추가해줌
-  useEffect(() => {
-    const toc = getTocElements();
-    const onClick = (idx: number) => {
-      setActive(idx);
-    };
-    for (let i = 0; i < toc.length; ++i) {
-      toc[i].addEventListener("click", () => onClick(i));
-    }
-    return () => {
-      for (let i = 0; i < toc.length; ++i) {
-        toc[i].removeEventListener("click", () => onClick(i));
-      }
-    };
   }, []);
 
   return (
