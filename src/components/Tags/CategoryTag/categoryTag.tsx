@@ -9,12 +9,11 @@ interface Props {
   onClick: () => Promise<void>;
 }
 
-const CategoryTag = ({ idx, text, select, onClick }: Props) => {
+const CategoryTag = ({ text, select, onClick }: Props) => {
   return (
     <div
       className={`category-tag ${select ? "category-tag-select" : ""}`}
-      key={idx}
-      onClick={() => onClick}
+      onClick={onClick}
     >
       {text}
     </div>

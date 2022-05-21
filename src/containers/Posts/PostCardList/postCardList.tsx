@@ -43,6 +43,7 @@ const PostCardList = ({ posts, categories, category }: Props) => {
             return (
               <CategoryTag
                 idx={idx}
+                key={idx}
                 text={category}
                 onClick={() => onTabIdxChange(idx)}
                 select={idx === tabIdx}

@@ -2,8 +2,8 @@ import React from "react";
 import { useSiteMetadata } from "../../../hooks/useSiteMetadate";
 
 import "./index.scss";
-import Image from "../../../components/image/image";
-import SocialBar from "../../../components/social-bar/social-bar";
+import SocialBar from "../../../components/Social-bar/social-bar";
+import Image from "../../../components/Image/image";
 
 const Bio = () => {
   const { autor } = useSiteMetadata();
