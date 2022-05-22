@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import "./index.scss";
 
@@ -6,6 +6,8 @@ interface Props {
   html: string;
 }
 const PostToc = ({ html }: Props) => {
+  const history = window.history;
+  console.log(history);
   const getHeaderElements = () => {
     const headers = document.querySelectorAll<HTMLHeadingElement>(
       ".markdown-body > h2, .markdown-body > h3"
@@ -27,10 +29,15 @@ const PostToc = ({ html }: Props) => {
           // 헤더가 보일 때 toc-active 클래스를 추가하여 toc를 활성화 시키고, (읽었다는 표시)
           // 헤더가 *안보이면서* 요소의 top이 음수가 아니면 뷰의 밑에 있다는 의미이므로 toc 비활성화 시킴
           if (entry.isIntersecting) {
-            toc[0].classList.add("toc-active");
+            toc[0]?.classList.add("toc-active");
           } else if (0 < entry.boundingClientRect.top) {
-            toc[0].classList.remove("toc-active");
+            toc[0]?.classList.remove("toc-active");
           }
+          // location.push 대신 replace를 이용하도록 함 (뒤로가기 히스토리 저장을 막음)
+          toc[0]?.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.replace(`#${headerElement.id}`);
+          });
         });
       },
       {
