@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout/layout";
 
 import Post from "../models/post";
-import SEO from "../components/seo/seo";
+import SEO from "../components/Seo/seo";
 import { useSiteMetadata } from "../hooks/useSiteMetadate";
 import PostsPageConainer from "../containers/Posts";
 

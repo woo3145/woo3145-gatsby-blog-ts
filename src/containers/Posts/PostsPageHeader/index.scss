@@ -1,3 +1,5 @@
+@use "../../../styles/colors" as *;
+
 .posts-page-header-wrapper {
   padding-top: 80px;
   width: 100%;
@@ -14,5 +16,9 @@
     margin-top: 10px;
     font-size: 1.4rem;
     font-weight: 600;
+
+    strong {
+      color: var(--third-text-color);
+    }
   }
 }

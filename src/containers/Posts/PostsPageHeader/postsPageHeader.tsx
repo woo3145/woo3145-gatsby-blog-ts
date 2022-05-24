@@ -11,7 +11,9 @@ const PostsPageHeader = ({ title, postsCount }: Props) => {
   return (
     <div className="posts-page-header-wrapper">
       <h1># {title}</h1>
-      <p>posts {postsCount}</p>
+      <p>
+        posts <strong>{postsCount}</strong>
+      </p>
     </div>
   );
 };
