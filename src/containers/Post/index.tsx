@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Post from "../../models/post";
 
-import "./index.scss";
 import PostContent from "./PostContent/postContent";
 import PostHeader from "./PostHeader/postHeader";
 import PostToc from "./PostToc/postToc";
+import "./index.scss";
 
 interface Props {
   post: Post;

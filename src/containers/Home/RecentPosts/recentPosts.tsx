@@ -2,8 +2,8 @@ import React, { useMemo } from "react";
 import { usePosts } from "../../../hooks/usePosts";
 import { getUniqueCategories } from "../../../utils/helpers";
 
-import "./index.scss";
 import PostCard from "../../../components/Cards/PostCard/postCard";
+import "./index.scss";
 
 const RecentPosts = () => {
   const posts = usePosts();

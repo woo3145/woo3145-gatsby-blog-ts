@@ -1,8 +1,8 @@
 import { Link } from "gatsby";
 import React from "react";
 
-import "./index.scss";
 import Post from "../../../models/post";
+import "./index.scss";
 
 interface Props {
   post: Post;
