@@ -6,6 +6,7 @@ import { useSiteMetadata } from "../hooks/useSiteMetadate";
 
 const IndexRoute = () => {
   const { description, title } = useSiteMetadata();
+
   return (
     <Layout>
       <SEO title={`${title} - Home`} description={description} />
