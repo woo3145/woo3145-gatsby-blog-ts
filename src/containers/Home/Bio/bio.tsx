@@ -1,7 +1,7 @@
 import React from "react";
 import { useSiteMetadata } from "../../../hooks/useSiteMetadate";
 
-import SocialBar from "../../../components/Social-bar/social-bar";
+import SocialBar from "../../../components/SocialBar/social-bar";
 import Image from "../../../components/Image/image";
 import "./index.scss";
 
