@@ -44,7 +44,7 @@ The ScriptProcessorNode is deprecated. Use AudioWorkletNode instead.
 
 ## 오디오 처리 인터페이스
 
-레거시 방식인 ScriptProcessorNode와 현재 웹표준인 AudioWorkletNode 가 존대한다.자바스크립트로 오디오를 처리하기 위해 사용하는 인터페이스이다.
+레거시 방식인 ScriptProcessorNode와 현재 웹표준인 AudioWorkletNode 가 존재한다.자바스크립트로 오디오를 처리하기 위해 사용하는 인터페이스이다.
 여러 오디오 작업을 처리할 수 있는데 예를들어 delay나 compressor오디오 모듈을 connect하여 이펙터 효과를 구현할 수 있다.
 
 ### ScriptProcessorNode의 특징
