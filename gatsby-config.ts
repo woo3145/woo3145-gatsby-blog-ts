@@ -76,6 +76,12 @@ const config: GatsbyConfig = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+          {
             // https://www.gatsbyjs.com/plugins/gatsby-remark-table-of-contents/ 마크다운 toc 생성 참고
             resolve: `gatsby-remark-table-of-contents`,
             options: {
